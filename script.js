@@ -2,6 +2,7 @@ function isVoro(text) {
   return true;
 }
 
+// obviously when we publish it the lemmas will be on sql
 const dictionary = {
   en: {
     "water": {
@@ -457,13 +458,11 @@ const dictionary = {
           ],
           grammar: { partitive: "tuld", genitive: "tule" }
         }
-        // ✅ Only noun sense in Võro
       ]
     }
   }
 };
 
-// DOM elements
 const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
 const directionBtns = document.querySelectorAll('.direction-btn');
@@ -479,7 +478,6 @@ const virtualKeyboard = document.getElementById('virtualKeyboard');
 const keyboardToggleBtn = document.getElementById('keyboardToggleBtn');
 let currentDirection = 'en-vro';
 
-// Utilities
 function escapeHtml(unsafe) {
   return unsafe
     .replace(/&/g, "&amp;")
@@ -521,7 +519,6 @@ function searchExamples(query, direction) {
   return results;
 }
 
-// Rendering
 function renderEntry(lemma, entry, direction) {
   let sensesHtml = '';
 
@@ -661,7 +658,6 @@ function renderEntry(lemma, entry, direction) {
     `;
   }
 
-  // CEFR tag ONLY for Võro (target language)
   let cefrHtml = '';
   if (entry.cefr && currentDirection === 'vro-en') {
     cefrHtml = `<div class="tags-container" style="position:absolute; right:0; top:0;"><button class="level-tag" onclick="showFilterList('cefr', '${entry.cefr}')">${entry.cefr.toUpperCase()}</button></div>`;
@@ -677,7 +673,6 @@ function renderEntry(lemma, entry, direction) {
   `;
 }
 
-// Interaction
 function handleTranslationClick(translationWord) {
   const newDirection = currentDirection === 'en-vro' ? 'vro-en' : 'en-vro';
   showResult(translationWord, newDirection);
@@ -895,7 +890,6 @@ function generateExercise() {
   });
 }
 
-// Event Listeners
 directionBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     directionBtns.forEach(b => b.classList.remove('active'));
