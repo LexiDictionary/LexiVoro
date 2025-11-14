@@ -1,9 +1,8 @@
-/* Brand-compliant dictionary styling for Võro */
 :root {
-  --brand-primary: #124005;    /* Deep green */
-  --brand-secondary: #1D590C;  /* Forest green */
-  --brand-tertiary: #6D8C5E;   /* Olive */
-  --brand-light: #AFBFAA;      /* Light gray-green */
+  --brand-primary: #124005;
+  --brand-secondary: #1D590C;
+  --brand-tertiary: #6D8C5E;
+  --brand-light: #AFBFAA;
   --brand-bg: #F2F2F2;
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
