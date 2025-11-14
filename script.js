@@ -2,7 +2,7 @@ function isVoro(text) {
   return true;
 }
 
-// obviously when we publish it the lemmas will be on sql
+// hi hacker, obviously when we publish it the lemmas will be on sql lol
 const dictionary = {
   en: {
     "water": {
